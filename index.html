@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div style="display: flex; gap: 20px">
+      <input
+        type="range"
+        name="input_range"
+        id="input_range"
+        min="20"
+        max="200"
+        step="10"
+        value="50"
+      />
+      <p id="num_range">50</p>
+    </div>
+    <button class="button_start" id="button_start">再生</button>
+    <div class="wrap_canvas" id="wrap_canvas"></div>
+    <script src="main.js"></script>
+  </body>
+</html>
