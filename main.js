@@ -1,7 +1,8 @@
 "use strict";
 let size_triangle = 50;
-let numOf_triangle = 14; // canvasの枚数（n + 1個のcanvas）
+let numOf_triangle = 4; // canvasの枚数（n + 1個のcanvas）
 let animationTime = 3; // ｎ秒のアニメーション
+const $wrap_canvas = document.quarySelector(".wrap_canvas")
 
 // htmlが読み込まれたら自動実行
 window.onload = function init() {
@@ -18,6 +19,7 @@ window.onload = function init() {
 
   $button_start.addEventListener("click", () => {
     size_triangle = Number($input_range.value);
+    $wrap_canvas.style.setProperty('--rotateZ', '600px');
     refreshCanvas();
   });
 
