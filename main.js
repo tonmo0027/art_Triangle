@@ -13,13 +13,20 @@ window.onload = function init() {
   const $button_start = document.querySelector("#button_start");
   const $input_range = document.querySelector("#input_range");
   const $input_deg = document.querySelector("#input_deg");
+  const $input_numOfTriangle = document.querySelector("#input_numOfTriangle");
   const $num_range = document.querySelector("#num_range");
+  const $num_deg = document.querySelector("#num_deg");
+  const $num_numOfTriangle = document.querySelector("#num_numOfTriangle");
   const $wrap_canvas = document.querySelector(".wrap_canvas")
 
   // input:rangeを動かすと数値が変わる
   $input_range.addEventListener("input", () => {
     $num_range.textContent = `${$input_range.value}`;
   });
+    $input_deg.addEventListener("input", () => {
+    $num_deg.textContent = `${$input_deg.value}`;
+  });
+  
 
   $button_start.addEventListener("click", () => {
     // 三角形のサイズ変更
