@@ -26,14 +26,6 @@ canvas {
   translate: -50% -50%;
 }
 
-@keyframes animeTriangleRotateY {
-  0% {
-    transform: rotateZ(var(--rotateZ));
-  }
-  100% {
-    transform: rotateZ(calc(var(--rotateZ) * -1));
-  }
-}
 @keyframes animeTriangle {
   0% {
     transform: rotateY(0deg);
