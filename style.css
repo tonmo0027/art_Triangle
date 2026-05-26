@@ -7,6 +7,8 @@ html {
 }
 
 .wrap_canvas {
+	--rotateZ: 53deg;
+	
   /* height: 120px; */
   position: absolute;
   top: 35%;
@@ -26,10 +28,10 @@ canvas {
 
 @keyframes animeTriangleRotateY {
   0% {
-    transform: rotateZ(53deg);
+    transform: rotateZ(var(--rotateZ));
   }
   100% {
-    transform: rotateZ(-53deg);
+    transform: rotateZ(calc(var(--rotateZ) * -1));
   }
 }
 @keyframes animeTriangle {
