@@ -1,16 +1,20 @@
 "use strict";
 let size_triangle = 50;
-let numOf_triangle = 4; // canvasの枚数（n + 1個のcanvas）
+let numOf_triangle = 7; // canvasの枚数（n + 1個のcanvas）
 let animationTime = 3; // ｎ秒のアニメーション
-const $wrap_canvas = document.quarySelector(".wrap_canvas")
+let anime_pendulum_deg = 53
+
 
 // htmlが読み込まれたら自動実行
 window.onload = function init() {
   console.log(size_triangle);
   // htmlタグの取得
+  
   const $button_start = document.querySelector("#button_start");
   const $input_range = document.querySelector("#input_range");
+  const $input_deg = document.querySelector("#input_deg");
   const $num_range = document.querySelector("#num_range");
+  const $wrap_canvas = document.querySelector(".wrap_canvas")
 
   // input:rangeを動かすと数値が変わる
   $input_range.addEventListener("input", () => {
@@ -18,17 +22,41 @@ window.onload = function init() {
   });
 
   $button_start.addEventListener("click", () => {
+    // 三角形のサイズ変更
     size_triangle = Number($input_range.value);
-    $wrap_canvas.style.setProperty('--rotateZ', '600px');
+
+    // 振り子アニメーションの角度変更
+    anime_pendulum_deg = Number($input_deg.value)
+    animation_set_pendulum(anime_pendulum_deg, animationTime, $wrap_canvas)
+    
+    // 再生成
     refreshCanvas();
   });
 
+  animation_set_pendulum(anime_pendulum_deg, animationTime, $wrap_canvas)
   refreshCanvas();
 
   setInterval(() => {
     mainLoop();
   }, 1000);
 };
+
+function animation_set_pendulum(numBeg, animationTime, htmlTag) {
+      // 振り子運動の角度変更
+    const anime_pendulum = [
+      {transform: `rotateZ(${numBeg}deg)`},
+      {transform: `rotateZ(${numBeg * -1}deg)`},
+    ]
+    const anime_option = {
+      duration: animationTime * 1000,  //  ミリ秒
+      iterations: Infinity,
+      delay: 0,
+      easing:"ease-in-out",
+      direction: "alternate"
+    }
+
+    htmlTag.animate(anime_pendulum, anime_option)
+}
 
 function refreshCanvas() {
   // なんか細かい設定
