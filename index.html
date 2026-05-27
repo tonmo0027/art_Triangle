@@ -7,48 +7,66 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <ul>
+      <li>
+        <span>三角形の大きさ</span>
+        <input
+          type="range"
+          name="input_range"
+          id="input_range"
+          min="20"
+          max="200"
+          step="10"
+          value="50"
+        />
 
-    <div style="display: flex; gap: 20px">
-      <span>三角形の大きさ</span>
-      <input
-        type="range"
-        name="input_range"
-        id="input_range"
-        min="20"
-        max="200"
-        step="10"
-        value="50"
-      />
-      <p id="num_range">50</p>
-    </div>
-    
-    <div style="display: flex; gap: 20px">
-      <span>三角形の数</span>
-      <input
-        type="number"
-        name="input_range"
-        id="input_numOfTriangle"
-        value="10"
-      />
-      <p id="num_numOfTriangle">10</p>
-    </div>
+        <p id="num_range">50</p>
+      </li>
 
-    <div style="display: flex; gap: 20px">
-      <span>振りの大きさ</span>
-      <input
-        type="range"
-        name="input_deg"
-        id="input_deg"
-        min="0"
-        max="170"
-        step="10"
-        value="53"
-      />
-      <p id="num_deg">53</p>
-    </div>
-    
-    
-    <button class="button_start" id="button_start">再生</button>
+      <li>
+        <span>三角形の回転速度</span>
+        <input
+          type="range"
+          name="input_rotateSpeed"
+          id="input_rotateSpeed"
+          max="10.0"
+          min="0.1"
+          step="0.1"
+          value="3"
+          style="height: 20px"
+        />
+        <p id="num_rotateSpeed">3</p>
+      </li>
+
+      <li>
+        <span>振りの大きさ</span>
+        <input
+          type="range"
+          name="input_deg"
+          id="input_deg"
+          min="0"
+          max="170"
+          step="10"
+          value="53"
+        />
+        <p id="num_deg">53</p>
+      </li>
+
+      <li>
+        <span>三角形の数</span>
+        <input
+          type="number"
+          name="input_numOfTriangle"
+          id="input_numOfTriangle"
+          min="0"
+          value="10"
+          style="height: 20px"
+        />
+        <p id="num_numOfTriangle">10</p>
+      </li>
+      <button class="button_start" id="button_start">再生</button>
+    </ul>
+
     <div class="wrap_canvas" id="wrap_canvas"></div>
     <script src="main.js"></script>
   </body>
