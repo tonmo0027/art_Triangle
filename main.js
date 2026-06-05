@@ -11,6 +11,8 @@ window.onload = function init() {
   // htmlタグの取得
 
   const $button_start = document.querySelector("#button_start");
+  const $button_hide = document.querySelector(".button_hide");
+  const $menu = document.querySelector(".menu");
   const $input_range = document.querySelector("#input_range");
   const $input_deg = document.querySelector("#input_deg");
   const $input_numOfTriangle = document.querySelector("#input_numOfTriangle");
@@ -34,6 +36,23 @@ window.onload = function init() {
   $input_rotateSpeed.addEventListener("input", () => {
     $num_rotateSpeed.textContent = `${$input_rotateSpeed.value}`;
   });
+
+let menuDisplay = $menu.style.display;
+let button_hide_text = $button_hide.textContent;
+console.log($button_hide.textContent)
+$button_hide.addEventListener("click", () => {
+	
+	if (menuDisplay == "block") {
+menuDisplay = "none"
+button_hide_text = "表示"
+} else {
+menuDisplay = "block"
+button_hide_text = "非表示"
+}
+
+$menu.style.display = menuDisplay;
+$button_hide.textContent = button_hide_text;
+})
 
   // ユーザー入力の受け取りと反映させての再生成
   $button_start.addEventListener("click", () => {
