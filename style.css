@@ -12,6 +12,13 @@ html body ul li {
   height: 30px;
   align-items: center;
 }
+.button_hide{
+display: flex;
+justify-content: space-between;
+}
+.menu {
+display: block;
+}
 html body .wrap_canvas {
   --rotateZ: 53deg;
   position: absolute;
